@@ -1,0 +1,13 @@
+query rickMortyCharacters{
+  episodesByIds(ids: [1, 2, 3]) {
+    name
+    characters {
+      name
+      status
+      image
+      species
+      type
+      location{name}
+    }
+  }
+}

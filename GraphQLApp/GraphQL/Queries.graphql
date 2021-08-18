@@ -1,0 +1,8 @@
+query RickMorty{
+  episodesByIds(ids: [1]) {
+    name
+    characters {
+      name
+    }
+  }
+}
