@@ -28,13 +28,6 @@ class EpisodePage: UIViewController {
         return table
     }()
     var isLoaded:Bool? = false
-    override func viewDidAppear(_ animated: Bool) {
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.characters.accept(self.localCharacters)
-        }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +85,7 @@ class EpisodePage: UIViewController {
                             if let datax = try? Data(contentsOf: URL(string: (x?.image)!)!) {
                                 if let image = UIImage(data: datax) {
                                     DispatchQueue.main.async {
+                                        self!.characters.accept(self!.localCharacters)
                                         self?.images.append(ImageOfCharacters(img: image, id: (x?.id!)!))
                                     }
                                 }
@@ -131,6 +125,7 @@ extension UIImageView {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
+                        
                     }
                 }
             }
