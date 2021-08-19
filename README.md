@@ -1,3 +1,7 @@
+
+Not finished app, still Under Construction!
+There are lots of work to do.
+
 Screenshots of menu and one of episode screen
 
 ![Simulator Screen Shot - iPhone 11 - 2021-08-19 at 11 33 51](https://user-images.githubusercontent.com/43298396/130036348-89a8739c-41c8-4074-8222-08b1b1e3ea31.png)
