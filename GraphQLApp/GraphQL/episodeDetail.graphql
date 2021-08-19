@@ -1,0 +1,14 @@
+query deneme($id: ID!) {
+  episode(id: $id){
+    characters{
+      id
+      name
+      status
+      species
+      type
+      gender
+      image
+    }
+  }
+}
+

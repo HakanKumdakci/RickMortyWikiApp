@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		40274AAB77FC29544EDE126E /* Pods_GraphQLAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E5F494F3B67181C988DAC5 /* Pods_GraphQLAppTests.framework */; };
+		6C7654B026CE2D0800A16C56 /* episodeQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6C7654AF26CE2D0800A16C56 /* episodeQuery.graphql */; };
+		6C7654B226CE2D6B00A16C56 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7654B126CE2D6B00A16C56 /* Episode.swift */; };
+		6C7654B426CE31AA00A16C56 /* EpisodePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7654B326CE31AA00A16C56 /* EpisodePage.swift */; };
+		6C7654B626CE39D800A16C56 /* episodeDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6C7654B526CE39D800A16C56 /* episodeDetail.graphql */; };
+		6C7654B826CE3A8A00A16C56 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7654B726CE3A8A00A16C56 /* Character.swift */; };
+		6C7654BA26CE444600A16C56 /* ImageOfCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7654B926CE444600A16C56 /* ImageOfCharacters.swift */; };
+		6C7654BC26CE46C200A16C56 /* CharacterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7654BB26CE46C200A16C56 /* CharacterPage.swift */; };
+		6C7654BE26CE4A0600A16C56 /* characterDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6C7654BD26CE4A0600A16C56 /* characterDetail.graphql */; };
 		6C8D56F626CCF1D4008B1156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8D56F526CCF1D4008B1156 /* AppDelegate.swift */; };
 		6C8D56F826CCF1D4008B1156 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8D56F726CCF1D4008B1156 /* SceneDelegate.swift */; };
 		6C8D56FA26CCF1D4008B1156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8D56F926CCF1D4008B1156 /* ViewController.swift */; };
@@ -55,6 +63,14 @@
 		52E5F494F3B67181C988DAC5 /* Pods_GraphQLAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphQLAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		553E6BF5227995FE1682D9D0 /* Pods-GraphQLAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLAppTests.release.xcconfig"; path = "Target Support Files/Pods-GraphQLAppTests/Pods-GraphQLAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		695C01404397BA723E007E12 /* Pods-GraphQLApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLApp.release.xcconfig"; path = "Target Support Files/Pods-GraphQLApp/Pods-GraphQLApp.release.xcconfig"; sourceTree = "<group>"; };
+		6C7654AF26CE2D0800A16C56 /* episodeQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = episodeQuery.graphql; sourceTree = "<group>"; };
+		6C7654B126CE2D6B00A16C56 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		6C7654B326CE31AA00A16C56 /* EpisodePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodePage.swift; sourceTree = "<group>"; };
+		6C7654B526CE39D800A16C56 /* episodeDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = episodeDetail.graphql; sourceTree = "<group>"; };
+		6C7654B726CE3A8A00A16C56 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		6C7654B926CE444600A16C56 /* ImageOfCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOfCharacters.swift; sourceTree = "<group>"; };
+		6C7654BB26CE46C200A16C56 /* CharacterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPage.swift; sourceTree = "<group>"; };
+		6C7654BD26CE4A0600A16C56 /* characterDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = characterDetail.graphql; sourceTree = "<group>"; };
 		6C8D56F226CCF1D4008B1156 /* GraphQLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphQLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C8D56F526CCF1D4008B1156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C8D56F726CCF1D4008B1156 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +169,11 @@
 				6C8D56F726CCF1D4008B1156 /* SceneDelegate.swift */,
 				6C8D56F926CCF1D4008B1156 /* ViewController.swift */,
 				6C8D574326CD4D72008B1156 /* Episodes.swift */,
+				6C7654B126CE2D6B00A16C56 /* Episode.swift */,
+				6C7654B726CE3A8A00A16C56 /* Character.swift */,
+				6C7654B326CE31AA00A16C56 /* EpisodePage.swift */,
+				6C7654BB26CE46C200A16C56 /* CharacterPage.swift */,
+				6C7654B926CE444600A16C56 /* ImageOfCharacters.swift */,
 				6C8D573426CD1697008B1156 /* GraphQL */,
 				6C8D56FB26CCF1D4008B1156 /* Main.storyboard */,
 				6C8D56FE26CCF1D4008B1156 /* Assets.xcassets */,
@@ -186,6 +207,9 @@
 				6C8D573D26CD1BC0008B1156 /* API.swift */,
 				6C8D573A26CD1726008B1156 /* Queries.graphql */,
 				6C8D574126CD2A95008B1156 /* query.graphql */,
+				6C7654AF26CE2D0800A16C56 /* episodeQuery.graphql */,
+				6C7654B526CE39D800A16C56 /* episodeDetail.graphql */,
+				6C7654BD26CE4A0600A16C56 /* characterDetail.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -323,7 +347,10 @@
 				6C8D574226CD2A95008B1156 /* query.graphql in Resources */,
 				6C8D573B26CD1726008B1156 /* Queries.graphql in Resources */,
 				6C8D570226CCF1D4008B1156 /* LaunchScreen.storyboard in Resources */,
+				6C7654B626CE39D800A16C56 /* episodeDetail.graphql in Resources */,
+				6C7654BE26CE4A0600A16C56 /* characterDetail.graphql in Resources */,
 				6C8D56FF26CCF1D4008B1156 /* Assets.xcassets in Resources */,
+				6C7654B026CE2D0800A16C56 /* episodeQuery.graphql in Resources */,
 				6C8D56FD26CCF1D4008B1156 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,10 +498,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C8D56FA26CCF1D4008B1156 /* ViewController.swift in Sources */,
+				6C7654B426CE31AA00A16C56 /* EpisodePage.swift in Sources */,
+				6C7654B226CE2D6B00A16C56 /* Episode.swift in Sources */,
 				6C8D574426CD4D72008B1156 /* Episodes.swift in Sources */,
+				6C7654BA26CE444600A16C56 /* ImageOfCharacters.swift in Sources */,
 				6C8D56F626CCF1D4008B1156 /* AppDelegate.swift in Sources */,
 				6C8D573E26CD1BC0008B1156 /* API.swift in Sources */,
 				6C8D56F826CCF1D4008B1156 /* SceneDelegate.swift in Sources */,
+				6C7654BC26CE46C200A16C56 /* CharacterPage.swift in Sources */,
+				6C7654B826CE3A8A00A16C56 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

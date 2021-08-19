@@ -13,8 +13,8 @@ import RxCocoa
 
 class Episodes: UIViewController {
     
-    let episodes: BehaviorRelay<[String]> = BehaviorRelay(value: [
-        "item","item", "item", "item", "item"
+    let episodes: BehaviorRelay<[Episode]> = BehaviorRelay(value: [
+        Episode(id: "1", name: "", air_date: "", episode: "", created: "")
     ])
     var disposeBag : DisposeBag? = {
         return DisposeBag()
@@ -32,6 +32,7 @@ class Episodes: UIViewController {
         
         view.addSubview(tableView!)
         tableView?.frame = view.bounds
+        
         // Do any additional setup after loading the view.
 
         
@@ -39,12 +40,52 @@ class Episodes: UIViewController {
         
         episodes.bind(to: tableView!.rx.items(cellIdentifier: "cell")) { row, model, cell in
             
-            cell.textLabel?.text = model
-            cell.detailTextLabel?.text = model
+            cell.textLabel?.text = model.name
         }.disposed(by: disposeBag!)
         
         
+        tableView!.rx.modelSelected(Episode.self).bind{ episode in
+            let vc = EpisodePage()
+            vc.id = episode.id!
+            vc.title = "\(episode.episode!) \(episode.name!)"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }.disposed(by: disposeBag!)
+        
+        getEpisodes()
     }
+    
+    
+    func getEpisodes() {
+        Network.shared.apollo.fetch(query: EpisodeQueryQuery()) {result in
+            
+            switch result{
+            
+            case .success(let graphlQLResult):
+                
+                
+                DispatchQueue.main.async {
+                    print()
+                    var m: [Episode] = []
+                    for i in 0..<(graphlQLResult.data?.episodesByIds!.count)!{
+                        
+                        let x = graphlQLResult.data?.episodesByIds![i]?.resultMap as? [String: Any]
+                        let n: Episode?
+                        n = Episode(id: x!["id"] as! String , name: x!["name"] as! String , air_date: x!["air_date"] as! String, episode: x!["episode"] as! String, created: x!["created"] as! String)
+                        if let n=n{
+                            m.append(n)
+                        }
+                    }
+                    self.episodes.accept(m)
+                }
+                                
+            case .failure(let m):
+                print(m)
+            }
+        }
+    }
+    
+    
+    
     
 
     /*
