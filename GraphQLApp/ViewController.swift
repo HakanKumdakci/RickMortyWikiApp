@@ -9,10 +9,7 @@ import UIKit
 import Apollo
 import SideMenu
 
-class Network {
-    static let shared = Network()
-    var apollo = ApolloClient(url: URL(string: "https://rickandmortyapi.com/graphql/")!)
-}
+
 
 
 
@@ -23,7 +20,6 @@ class ViewController: UIViewController {
     var menu: SideMenuNavigationController? = {
         var menu = SideMenuNavigationController(rootViewController: MenuListController())
         menu.leftSide = true
-        
         return menu
     }()
     
@@ -37,9 +33,6 @@ class ViewController: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
-        
-        
-        
     }
     
     @objc func getMenu(){
@@ -52,13 +45,12 @@ class ViewController: UIViewController {
     }
     
     
-    
     func networkRequest(){
         
         Network.shared.apollo.fetch(query: RickMortyQuery()) {result in
             
             switch result{
-            
+                
             case .success(let graphlQLResult):
                 
                 for i in graphlQLResult.data?.episodesByIds![0]?.characters ?? []{
@@ -107,8 +99,8 @@ class MenuListController: UITableViewController{
         let cell = tableView.cellForRow(at: indexPath)
         cell?.backgroundColor = darkColor
         tableView.reloadRows(at: [indexPath], with: .fade)
-        let vc = Episodes()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = Epi()
+//        navigationController?.pushViewController(vc, animated: true)
         
     }
     

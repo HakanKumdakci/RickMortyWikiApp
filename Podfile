@@ -8,7 +8,9 @@ target 'GraphQLApp' do
   # Pods for GraphQLApp
 pod 'RxSwift', '6.2.0'
 pod 'RxCocoa', '6.2.0'
-pod "SideMenu"
+pod "TinyConstraints"
+
+
   target 'GraphQLAppTests' do
     inherit! :search_paths
     # Pods for testing

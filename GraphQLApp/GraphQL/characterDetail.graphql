@@ -1,13 +1,33 @@
-query rickMortyCharactersd{
-  episodesByIds(ids: [1, 3]) {
+query characterDetailById($id: ID!) {
+  character(id: $id){
+    id
     name
-    characters {
+    status
+    species
+    type
+    gender
+    origin{
+      id
       name
-      status
-      image
-      species
       type
-      location{name}
+      dimension
+      created
     }
+    location{
+        id
+      name
+      type
+      dimension
+      created
+    }
+    episode{
+      id
+      name
+      episode
+      air_date
+      created
+    }
+    image
+    created
   }
 }
