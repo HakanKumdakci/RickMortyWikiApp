@@ -19,23 +19,24 @@ class CharacterDetailPageViewModel: NSObject {
     var characterDetail: BehaviorRelay<CharacterDetail> = BehaviorRelay(value: CharacterDetail(id: "", name: "", status: "", species: "", type: "", gender: "", origin: Location(id: "", name: "", type: "", dimension: "", created: ""), location: Location(id: "", name: "", type: "", dimension: "", created: ""), episode: [], created: "", image: ""))
     
     
+    var episodes: BehaviorRelay<[Episode]> = BehaviorRelay(value: [])
+    
     var delegate: CharacterDetailPageViewModelDelegate?
     
     
-    var id: String
+    var character: Character
     
-    
-    init(id: String){
-        self.id = id
+    init(character: Character){
+        self.character = character
     }
     
     func getDetail(){
-        let m:Int? = Int(self.id)
-        Network.shared.apollo.fetch(query: CharacterDetailByIdQuery(id: self.id)) { [weak self] result in
+        
+        Network.shared.apollo.fetch(query: CharacterDetailByIdQuery(id: self.character.id)) { [weak self] result in
             switch result{
                 
             case .success(let graphlQLResult):
-                guard let data = graphlQLResult.data?.resultMap,
+                guard let data = graphlQLResult.data?.resultMap.first?.value,
                       let self = self else {return }
                 do{
                     let json = try JSONSerialization.data(withJSONObject: data)
@@ -52,6 +53,12 @@ class CharacterDetailPageViewModel: NSObject {
                 print(error)
             }
         }
+    }
+    
+    func prepareLocationDetailViewModel(tag: Int){
+        let model = tag == 0 ? characterDetail.value.origin : characterDetail.value.location
+        let vc = LocationDetailViewController(viewModel: LocationDetailViewModel(model: model!))
+        SessionSingleton.navigationController.pushViewController(vc, animated: true)
     }
     
     

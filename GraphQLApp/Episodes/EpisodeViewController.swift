@@ -40,6 +40,8 @@ class EpisodeViewController: UIViewController {
         view.addSubview(episodeTableView)
         viewModel = EpisodeViewModel()
         
+        title = "Episodes"
+        
         //cell for row at
         viewModel.episodes.bind(to: episodeTableView.rx.items(cellIdentifier: "cell")) { row, model, cell in
             cell.textLabel?.text = model.name
@@ -50,9 +52,8 @@ class EpisodeViewController: UIViewController {
             guard let id = episode.id,
                   let episodeCount = episode.episode,
                   let name = episode.name else { return }
-            let vc = EpisodeDetail(viewModel: EpisodeDetailViewModel(id: id))
+            let vc = EpisodeDetail(viewModel: EpisodeDetailViewModel(id: id, title: "\(episodeCount) \(name)"))
             
-            vc.title = "\(episodeCount) \(name)"
             self.navigationController?.pushViewController(vc, animated: true)
         }.disposed(by: disposeBag!)
     }

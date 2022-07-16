@@ -8,17 +8,18 @@
 import RxSwift
 import RxCocoa
 
-
 class EpisodeDetailViewModel: NSObject {
 
     var id: String = "0"
+    var title: String
     var localCharacters : [Character] = []
     
     
     let characters: BehaviorRelay<[Character]> = BehaviorRelay(value: [])
     
-    init(id: String){
+    init(id: String, title: String){
         self.id = id
+        self.title = title
     }
     
     
@@ -32,15 +33,21 @@ class EpisodeDetailViewModel: NSObject {
                 
                 
                 DispatchQueue.main.async {
-                    print()
                     var arr: [Character] = []
                     for i in 0..<((graphlQLResult.data?.episode?.characters.count)!) {
                         
                         let x = graphlQLResult.data?.episode?.characters[i]
-                        let m = x?.id
-                        let c: Character = Character(id: (x?.id)!, name: (x?.name)!, status: (x?.status)!, species: (x?.species)!, type: (x?.type)!, gender: (x?.gender)!, image: (x?.image)!)
-                        print(x?.image)
-                        arr.append(c)
+                        
+                        do{
+                            let json = try JSONSerialization.data(withJSONObject: x?.resultMap)
+                            let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .useDefaultKeys
+                            let obj = try decoder.decode(Character.self, from: json)
+                            arr.append(obj)
+                        }catch(let error){
+                            print(error)
+                        }
+                        
                     }
                     self.localCharacters = arr
                     self.characters.accept(arr)

@@ -31,6 +31,11 @@
 		6C8D574426CD4D72008B1156 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8D574326CD4D72008B1156 /* EpisodeViewController.swift */; };
 		76EEF38A7DDE7380950772FA /* Pods_GraphQLApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1579909D91EEE19CD868B397 /* Pods_GraphQLApp.framework */; };
 		C4A129EEE47731822D3DFE57 /* Pods_GraphQLApp_GraphQLAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C902DBC858A4CD23CB6301D /* Pods_GraphQLApp_GraphQLAppUITests.framework */; };
+		FF0AA7CB287EBEE30034DF82 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0AA7CA287EBEE30034DF82 /* LocationDetailViewController.swift */; };
+		FF0AA7CE287EBF110034DF82 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0AA7CD287EBF110034DF82 /* LocationDetailViewModel.swift */; };
+		FF0AA7D0287EBF3D0034DF82 /* locationDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FF0AA7CF287EBF3D0034DF82 /* locationDetail.graphql */; };
+		FF0AA7D2287EDA9B0034DF82 /* SessionSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0AA7D1287EDA9B0034DF82 /* SessionSingleton.swift */; };
+		FF15067E28803A0A0073F091 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15067D28803A0A0073F091 /* EpisodeCollectionViewCell.swift */; };
 		FF2776A7287A326D00E16891 /* EpisodeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2776A6287A326D00E16891 /* EpisodeDetailViewModel.swift */; };
 		FF2776AA287A341900E16891 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2776A9287A341900E16891 /* CharacterDetailViewModel.swift */; };
 		FF2776AD287A35BD00E16891 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FF2776AC287A35BD00E16891 /* SDWebImage */; };
@@ -98,6 +103,11 @@
 		6C8D574326CD4D72008B1156 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		909E15730D1AA26F9EC3DE91 /* Pods-GraphQLApp-GraphQLAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLApp-GraphQLAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GraphQLApp-GraphQLAppUITests/Pods-GraphQLApp-GraphQLAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B37B69C8D353FC640D3CF281 /* Pods-GraphQLAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GraphQLAppTests/Pods-GraphQLAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF0AA7CA287EBEE30034DF82 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		FF0AA7CD287EBF110034DF82 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
+		FF0AA7CF287EBF3D0034DF82 /* locationDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = locationDetail.graphql; sourceTree = "<group>"; };
+		FF0AA7D1287EDA9B0034DF82 /* SessionSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSingleton.swift; sourceTree = "<group>"; };
+		FF15067D28803A0A0073F091 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF2776A6287A326D00E16891 /* EpisodeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewModel.swift; sourceTree = "<group>"; };
 		FF2776A9287A341900E16891 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		FF2776AE287AC5B000E16891 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -182,6 +192,7 @@
 				FF66C5B2287A1E82006E1516 /* Resources */,
 				FF66C5B1287A1E79006E1516 /* Model */,
 				6C8D56F926CCF1D4008B1156 /* ViewController.swift */,
+				FF0AA7CC287EBEF90034DF82 /* LocationDetail */,
 				FF66C59E2879883F006E1516 /* MainPage */,
 				FF66C5AD287A1C89006E1516 /* Episodes */,
 				FF66C5B0287A1E60006E1516 /* EpisodeDetail */,
@@ -191,6 +202,7 @@
 				6C8D56FE26CCF1D4008B1156 /* Assets.xcassets */,
 				6C8D570026CCF1D4008B1156 /* LaunchScreen.storyboard */,
 				6C8D570326CCF1D4008B1156 /* Info.plist */,
+				FF0AA7D1287EDA9B0034DF82 /* SessionSingleton.swift */,
 			);
 			path = GraphQLApp;
 			sourceTree = "<group>";
@@ -223,6 +235,7 @@
 				6C7654B526CE39D800A16C56 /* episodeDetail.graphql */,
 				6C7654BD26CE4A0600A16C56 /* characterFetch.graphql */,
 				FF2776B2287AC96F00E16891 /* characterDetail.graphql */,
+				FF0AA7CF287EBF3D0034DF82 /* locationDetail.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -237,11 +250,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF0AA7CC287EBEF90034DF82 /* LocationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FF0AA7CA287EBEE30034DF82 /* LocationDetailViewController.swift */,
+				FF0AA7CD287EBF110034DF82 /* LocationDetailViewModel.swift */,
+			);
+			path = LocationDetail;
+			sourceTree = "<group>";
+		};
 		FF2776A8287A340500E16891 /* CharacterDetail */ = {
 			isa = PBXGroup;
 			children = (
 				6C7654BB26CE46C200A16C56 /* CharacterDetail.swift */,
 				FF2776A9287A341900E16891 /* CharacterDetailViewModel.swift */,
+				FF15067D28803A0A0073F091 /* EpisodeCollectionViewCell.swift */,
 			);
 			path = CharacterDetail;
 			sourceTree = "<group>";
@@ -424,6 +447,7 @@
 				6C7654B626CE39D800A16C56 /* episodeDetail.graphql in Resources */,
 				6C7654BE26CE4A0600A16C56 /* characterFetch.graphql in Resources */,
 				6C8D56FF26CCF1D4008B1156 /* Assets.xcassets in Resources */,
+				FF0AA7D0287EBF3D0034DF82 /* locationDetail.graphql in Resources */,
 				6C7654B026CE2D0800A16C56 /* episodeQuery.graphql in Resources */,
 				6C8D56FD26CCF1D4008B1156 /* Main.storyboard in Resources */,
 			);
@@ -575,14 +599,18 @@
 				6C8D56FA26CCF1D4008B1156 /* ViewController.swift in Sources */,
 				6C7654B426CE31AA00A16C56 /* EpisodeDetail.swift in Sources */,
 				6C7654B226CE2D6B00A16C56 /* Episode.swift in Sources */,
+				FF0AA7CB287EBEE30034DF82 /* LocationDetailViewController.swift in Sources */,
 				6C8D574426CD4D72008B1156 /* EpisodeViewController.swift in Sources */,
+				FF0AA7CE287EBF110034DF82 /* LocationDetailViewModel.swift in Sources */,
 				FF2776AF287AC5B000E16891 /* Location.swift in Sources */,
+				FF0AA7D2287EDA9B0034DF82 /* SessionSingleton.swift in Sources */,
 				FF2776AA287A341900E16891 /* CharacterDetailViewModel.swift in Sources */,
 				6C7654BA26CE444600A16C56 /* ImageOfCharacters.swift in Sources */,
 				6C8D56F626CCF1D4008B1156 /* AppDelegate.swift in Sources */,
 				FF66C5AF287A1D61006E1516 /* EpisodeViewModel.swift in Sources */,
 				6C8D573E26CD1BC0008B1156 /* API.swift in Sources */,
 				6C8D56F826CCF1D4008B1156 /* SceneDelegate.swift in Sources */,
+				FF15067E28803A0A0073F091 /* EpisodeCollectionViewCell.swift in Sources */,
 				FF66C5B4287A20ED006E1516 /* NetworkManager.swift in Sources */,
 				FF66C5A02879885C006E1516 /* MainPageViewController.swift in Sources */,
 				6C7654BC26CE46C200A16C56 /* CharacterDetail.swift in Sources */,
